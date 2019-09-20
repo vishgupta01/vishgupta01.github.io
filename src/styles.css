@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.mat-tab-header {
+    background-color: #98b31f;
+}
+.mat-tab-label {
+    color: white;
+}
+.text-align-center{
+    text-align: center;
+}
+.width100{
+    width: 100%;
+}
+.padding0{
+    padding: 0%;
+}
+.margin0{
+    margin: 0%;
+}
+.colorWhite{
+    color: white;
+}
+.mat-input-underline {
+   background-color: white;
+}
+.mat-input-container label {
+    color: white !important;
+}
+  
+  /* When the input is focused */
+.mat-input-container.mat-input-focused label {
+    color: white !important;
+}
+.mat-form-field-prefix .mat-icon-button, .mat-form-field-suffix .mat-icon-button{
+    display: none;
+}

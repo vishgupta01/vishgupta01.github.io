@@ -1,0 +1,19 @@
+.myNavFont{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: white;
+}
+.navBarFixed{
+    position: fixed;
+    width: 100%;
+    background-color: blue;
+    z-index: 1;
+}
+.logoFont{
+    font-family: bruxFont;
+    font-size: 2.2em;
+    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 5px;
+}

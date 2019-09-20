@@ -1,0 +1,46 @@
+.mainDiv{
+  padding-top: 4em;
+}
+.mainDivTitle{
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: blue;
+  font-weight: 400;
+}
+.titleSecondPart{
+  font-weight: 700;
+}
+.tableStyle{
+  width: 70%;
+  margin: auto;
+  margin-top: 2em;
+  box-shadow: 0 0 4px 0px #00000054;
+}
+.viewPricingDiv{
+  width: 35%;
+  text-align: center;
+}
+.viewPricingCaption{
+  color: blue;
+  font-weight: 200;
+  font-size: 12px;
+  padding-top: 1em;
+  line-height: 14px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.viewPricingCaption:hover{
+  border-bottom: 1px solid;
+}
+.actionsIcon{
+  width: 14%;
+  padding-right: 2%;
+}
+.campaignTitle{
+  font-weight: 600;
+  color: blue;
+}
+.smallText{
+  font-size: 12px;
+}

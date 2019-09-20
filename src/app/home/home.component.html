@@ -1,0 +1,135 @@
+<div class="mainDiv">
+  <h4 class="mainDivTitle">Manage <span class="titleSecondPart">Campaigns</span></h4>
+  <mat-tab-group [backgroundColor]="backgroundColorToggle">
+    <mat-tab label="UPCOMING CAMPAIGNS">
+        <table mat-table class="table table-hover tableStyle">
+            <thead>
+              <tr style="background-color: #dadada;">
+                <th style="width: 10em;">DATE</th>
+                <th style="width: 25em;">CAMPAIGN</th>
+                <th style="width: 10em;">VIEW</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of upcomingCampaignData; let i = index" [attr.data-index]="i" >
+                <td>
+                  <p class="smallText margin0">{{item.Date1 | date}}</p>
+                  <p class="smallText margin0">{{item.days}} days left</p>
+                </td>
+                <td>
+                  <div class="row padding0 margin0">
+                    <div class="col-2"><img src={{item.image}} class="width100"></div>
+                    <div class="col-10">
+                      <p class="margin0 campaignTitle">{{item.Campaign}}</p>
+                      <p class="margin0 smallText">{{item.location}}</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="viewPricingDiv">
+                    <img src="../../assets/icons/dollar.png">
+                    <p id=pricing{{i}} class="viewPricingCaption" (click)=priceClick(i,item.pricing)>VIEW PRICING</p>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                      <span><img class="actionsIcon" src="../../assets/icons/fileBlue.png"></span>
+                      <span><img class="actionsIcon" src="../../assets/icons/wifi.png"></span>
+                      <span><img class="actionsIcon" src="../../assets/icons/calendar.png"></span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </mat-tab>
+    <mat-tab label="LIVE CAMPAIGNS"> 
+        <table mat-table class="table table-hover tableStyle">
+            <thead>
+              <tr style="background-color: #dadada;">
+                <th style="width: 10em;">DATE</th>
+                <th style="width: 25em;">CAMPAIGN</th>
+                <th style="width: 10em;">VIEW</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of upcomingCampaignData; let i = index" [attr.data-index]="i" >
+                <td>
+                  <p class="smallText">{{item.Date1 | date}}</p>
+                </td>
+                <td>
+                  <div class="row padding0 margin0">
+                    <div class="col-2"><img src={{item.image}} class="width100"></div>
+                    <div class="col-10">
+                      <p class="margin0 campaignTitle">{{item.Campaign}}</p>
+                      <p class="margin0 smallText">{{item.location}}</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="viewPricingDiv">
+                    <img src="../../assets/icons/dollar.png">
+                    <p id=pricing{{i}} class="viewPricingCaption" (click)=priceClick(i,item.pricing)>VIEW PRICING</p>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                      <span><img class="actionsIcon" src="../../assets/icons/file.png"></span>
+                      <span><img class="actionsIcon" src="../../assets/icons/wifiBlue.png"></span>
+                      <span><img class="actionsIcon" src="../../assets/icons/calendar.png"></span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>  
+    </mat-tab>
+    <mat-tab label="PAST CAMPAIGNS">
+        <table mat-table class="table table-hover tableStyle">
+            <thead>
+              <tr style="background-color: #dadada;">
+                <th style="width: 10em;">DATE</th>
+                <th style="width: 25em;">CAMPAIGN</th>
+                <th style="width: 10em;">VIEW</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of upcomingCampaignData; let i = index" [attr.data-index]="i" >
+                <td>
+                  <p id=date{{i}} class="smallText margin0">{{item.Date1 | date}}</p>
+                  <p id=days{{i}} class="smallText margin0">{{item.days}} days ago</p>
+                </td>
+                <td>
+                  <div class="row padding0 margin0">
+                    <div class="col-2"><img src={{item.image}} class="width100"></div>
+                    <div class="col-10">
+                      <p class="margin0 campaignTitle">{{item.Campaign}}</p>
+                      <p class="margin0 smallText">{{item.location}}</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="viewPricingDiv">
+                    <img src="../../assets/icons/dollar.png">
+                    <p id=pricing{{i}} class="viewPricingCaption" (click)=priceClick(i,item.pricing)>VIEW PRICING</p>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                      <span><img class="actionsIcon" src="../../assets/icons/fileBlue.png"></span>
+                      <span><img class="actionsIcon" src="../../assets/icons/wifi.png"></span>
+                      <span><img class="actionsIcon" (click)="picker.open()" src="../../assets/icons/calendarBlue.png"></span>
+                      <mat-form-field>
+                          <input style="display: none" (dateChange)="addEvent(i, $event)" matInput [matDatepicker]="picker">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </mat-tab>
+  </mat-tab-group>
+</div>
